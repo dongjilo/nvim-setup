@@ -227,7 +227,7 @@ return {
             --"*/src/*/tsconfig.json",
           },
           always_show = { -- remains visible even if other settings would normally hide it
-            --".gitignored",
+            --'.gitignored',
           },
           always_show_by_pattern = { -- uses glob style patterns
             --".env*",
