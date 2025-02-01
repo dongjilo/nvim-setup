@@ -55,7 +55,7 @@ local center = {
 
 local footer = {
   '',
-  'nvim ' .. version.major .. '.' .. version.minor,
+  'nvim version ' .. version.major .. '.' .. version.minor,
 }
 
 vim.api.nvim_create_autocmd('Filetype', {
