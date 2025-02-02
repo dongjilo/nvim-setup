@@ -26,4 +26,6 @@ require('lazy').setup {
   require 'plugins.indent-blankline',
   require 'plugins.dashboard',
   require 'plugins.misc',
+  require 'plugins.dap',
+  require 'plugins.comment',
 }
