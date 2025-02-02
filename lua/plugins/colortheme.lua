@@ -1,28 +1,27 @@
 return {
-  'shaunsingh/nord.nvim',
+  'sainnhe/gruvbox-material',
   lazy = false,
   priority = 1000,
   config = function()
-    -- Example config in lua
-    vim.g.nord_contrast = true
-    vim.g.nord_borders = false
-    vim.g.nord_disable_background = true
-    vim.g.nord_italic = false
-    vim.g.nord_uniform_diff_background = true
-    vim.g.nord_bold = false
+    vim.g.gruvboxmaterial_enable_bold = 1
+    vim.g.gruvbox_material_background = 'soft'
+    vim.g.gruvbox_material_foreground = 'material'
+    vim.g.gruvbox_material_transparent_background = 1
+    vim.g.gruvbox_material_enable_italic = true
+    vim.cmd.colorscheme 'gruvbox-material'
 
-    -- Load the colorscheme
-    require('nord').set()
-
-    -- Toggle background transparency
-    local bg_transparent = true
+    local bg_transparent_level = 0 -- Initial level (0 = not transparent)
+    local max_bg_levels = 2
 
     local toggle_transparency = function()
-      bg_transparent = not bg_transparent
-      vim.g.nord_disable_background = bg_transparent
-      vim.cmd [[colorscheme nord]]
+      bg_transparent_level = (bg_transparent_level + 1) % (max_bg_levels + 1)
+
+      vim.g.gruvbox_material_transparent_background = bg_transparent_level
+
+      -- Reload gruvbox-material to apply the change
+      vim.cmd [[colorscheme gruvbox-material]]
     end
 
-    vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true, desc = 'Toggle [B]ack[G]round' })
   end,
 }
