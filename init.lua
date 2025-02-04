@@ -28,4 +28,5 @@ require('lazy').setup {
   require 'plugins.misc',
   require 'plugins.dap',
   require 'plugins.comment',
+  require 'plugins.trouble',
 }
