@@ -1,5 +1,9 @@
 # lazylock
-lazy-lock.json
+./lazy-lock.json
+
+# DASHBOARD
+./lua/plugins/dashboard.lua
+
 
 # ascii art folder
 art/
