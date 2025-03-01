@@ -18,6 +18,8 @@ return { -- Highlight, edit, and navigate code
       'bash',
       'css',
       'html',
+      'c',
+      'cpp',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
