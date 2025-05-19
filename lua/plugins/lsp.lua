@@ -13,6 +13,12 @@ return {
 
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
+
+    -- Laravel Plugin Dependencies
+    'tpope/vim-dotenv',
+    'nvim-telescope/telescope.nvim',
+    'MunifTanjim/nui.nvim',
+    'kevinhwang91/promise-async',
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -180,9 +186,18 @@ return {
           },
         },
       },
-      --html = { filetypes = { 'html', 'twig', 'hbs' } },
-      --cssls = {},
-      -- tailwindcss = {},
+
+      intelephense = {
+        settings = {
+          intelephense = {
+            licenceKey = '',
+          },
+        },
+      },
+
+      html = { filetypes = { 'html', 'twig', 'hbs' } },
+      cssls = {},
+      tailwindcss = {},
       -- dockerls = {},
       -- sqlls = {},
       -- terraformls = {},
@@ -229,6 +244,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'pyright',
+      'intelephense',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

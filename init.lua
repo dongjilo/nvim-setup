@@ -29,4 +29,5 @@ require('lazy').setup {
   require 'plugins.dap',
   require 'plugins.comment',
   require 'plugins.trouble',
+  require 'plugins.laravel',
 }
